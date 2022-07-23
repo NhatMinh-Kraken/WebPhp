@@ -89,7 +89,9 @@
                                     </div>
                                     <div class="Product-Accesory-Right-MuaHang">
                                         <div class="Product-Accesory-Right-SoLuong">
-                                            <span name="SoLuongPhuKien"><?php echo $row['SoLuongPhuKien'] ?></span>
+                                            <span name="SoLuongPhuKien"><?php if($row['SoLuongPhuKien'] == 0){
+                                                echo "Hết";
+                                            }else{echo $row['SoLuongPhuKien'];} ?></span>
                                             <p> Sản Phẩm Có Sẳn</p>
                                         </div>
                                         <div class="Product-Accesory-Right-Submit">

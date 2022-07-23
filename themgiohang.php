@@ -40,8 +40,6 @@
                     else{
                         $_SESSION['cart'] = $Product;
                     }
-                    
-
                 }
                 else{
                     $_SESSION['cart'] = $New_Product;
@@ -96,16 +94,23 @@
             }
             elseif($cart_item['id']==$id){
 
+
+                $query_SoLuongPhuKienTonKho = mysqli_query($mysqli, "SELECT chitietphukien.SoLuongPhuKien FROM chitietphukien WHERE chitietphukien.IdChiTietPhuKien = '$id'");
+                $SoLuongPhuKienTonKho = mysqli_fetch_assoc($query_SoLuongPhuKienTonKho);
+
                 $TangSoLuong = $cart_item['SoLuong'] + 1;
-                if($cart_item['SoLuong'] <= 9){
+                if($cart_item['SoLuong'] < $SoLuongPhuKienTonKho['SoLuongPhuKien']){
                     
                     $Product[] = array('TenChiTietPhuKien'=>$cart_item['TenChiTietPhuKien'], 'id'=>$cart_item['id'],'AnhPhuKien1'=>$cart_item['AnhPhuKien1'],'XuatXuPhuKien'=>$cart_item['XuatXuPhuKien'],'ChatLieu'=>$cart_item['ChatLieu'],'BoDayDu'=>$cart_item['BoDayDu'],'DongGioiPhuKienThieu1'=>$cart_item['DongGioiThieuPhuKien1'],'DongGioiPhuKienThieu2'=>$cart_item['DongGioiThieuPhuKien2'],'DongGioiPhuKienThieu3'=>$cart_item['DongGioiThieuPhuKien3'],'GiaCaPhuKien'=>$cart_item['GiaCaPhuKien'] ,'SoLuong'=>$TangSoLuong);
                 }
                 else{
                     $Product[] = array('TenChiTietPhuKien'=>$cart_item['TenChiTietPhuKien'], 'id'=>$cart_item['id'],'AnhPhuKien1'=>$cart_item['AnhPhuKien1'],'XuatXuPhuKien'=>$cart_item['XuatXuPhuKien'],'ChatLieu'=>$cart_item['ChatLieu'],'BoDayDu'=>$cart_item['BoDayDu'],'DongGioiPhuKienThieu1'=>$cart_item['DongGioiThieuPhuKien1'],'DongGioiPhuKienThieu2'=>$cart_item['DongGioiThieuPhuKien2'],'DongGioiPhuKienThieu3'=>$cart_item['DongGioiThieuPhuKien3'],'GiaCaPhuKien'=>$cart_item['GiaCaPhuKien'] ,'SoLuong'=>$cart_item['SoLuong']);
+                    
                 }
                 $_SESSION['cart'] = $Product;
+                
             }
+            
         }
         header('Location:Index.php?quanly=thongtingiohang');
     }
@@ -157,6 +162,7 @@
             foreach($_SESSION['cart'] as $key => $value){
                 $id_chitiet_phukien = $value['id'];
                 $SoLuongMua = $value['SoLuong'];
+
                 $GiaTungPhuKien = $value['GiaCaPhuKien'];
 
                 $insert_Detail_cart = "INSERT INTO detailorder(Code_Cart,IdOrder,IdChiTietPhuKien,SoLuongPhuKienMuaHang,GiaTungPhuKien,NgayMua) Value('".$Code_cart."','".$id_khachang."','".$id_chitiet_phukien."','".$SoLuongMua."','".$GiaTungPhuKien."',now())";
@@ -164,6 +170,10 @@
                 $query_detail_cart = mysqli_query($mysqli,$insert_Detail_cart);
             }
         }
+        // $update = "UPDATE chitietphukien SET chitietphukien.SoLuongPhuKien = CASE when chitietphukien.IdChiTietPhuKien = '$id' then chitietphukien.SoLuongPhuKien - $SoLuongMua END WHERE chitietphukien.IdChiTietPhuKien in (IdChiTietPhuKien = '$id')";
+        // $query_update = mysqli_query($mysqli,$update);
+
+
         unset($_SESSION['cart']);
         header('Location:Index.php?quanly=camon');
     }
