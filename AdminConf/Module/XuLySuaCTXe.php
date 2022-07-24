@@ -183,7 +183,7 @@
     
     if(isset($_POST['SuaCTXe']))
     {
-        if($hinhanh1 =='' || $AnhMau1=='' || $AnhMau2=='' || $AnhMau3=='' || $AnhDauXe1=='' || $AnhDauXe2=='' || $AnhThanXe1=='' || $AnhThanXe2=='' || $AnhDuoiXe=='' || $AnhKhoangLai=='' || $AnhHangGheTruoc=='' || $AnhHangGheHanhKhach=='' || $AnhHanhLy=='' || $AnhTienNghi=='' || $AnhDongCo=='' || $AnhVanHanh=='')       
+        if($LoaiXe =='' || $hinhanh1 =='' || $XuatXu =='' || $TayLaiTroLuc=='' || $AnhMau1=='' || $AnhMau2=='' || $AnhMau3=='' || $AnhDauXe1=='' || $AnhDauXe2=='' || $AnhThanXe1=='' || $AnhThanXe2=='' || $AnhDuoiXe=='' || $AnhKhoangLai=='' || $AnhHangGheTruoc=='' || $AnhHangGheHanhKhach=='' || $AnhHanhLy=='' || $AnhTienNghi=='' || $AnhDongCo=='' || $AnhVanHanh=='')       
         {
             echo '<script> alert("Vui lòng không để trống ảnh");window.location="indexAdmin.php?action=Xem-Xe";</script>';
             exit;

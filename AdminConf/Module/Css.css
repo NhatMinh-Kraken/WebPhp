@@ -114,6 +114,10 @@
         border: 0px solid #fff;
     }
 
+    .padding_bottom{
+        padding-bottom: 20px;
+    }
+
     /**/
 
     #wrapper {
@@ -1911,6 +1915,13 @@
 
     .enter-btn {
         height: 45px;
+        width: 100px;
+        background: #00ADEF;
+        color: #fff;
+    }
+
+    .enter-btn:hover{
+        background: #00ef93;
     }
 
     .btn-facebook {
@@ -2102,6 +2113,7 @@
 
     .text-center {
         padding: 20px;
+        text-align: center;
     }
 
     .btn-block-enter {

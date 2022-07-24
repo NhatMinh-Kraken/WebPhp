@@ -154,6 +154,7 @@
         $GhiChu = $_POST['GhiChu'];
         $Code_cart = rand(0,9999);
         $TongTien = $_POST['TongTien'];
+        $id = $_GET['idchitietphukien'];
         $insert_cart = "INSERT INTO orderaccesory(IdUser,Code_Cart,GhiChu,TongTien,NgayMua) Value('".$id_khachang."','".$Code_cart."','".$GhiChu."','".$TongTien."',now())";
         $query_cart = mysqli_query($mysqli,$insert_cart);
 
@@ -170,9 +171,10 @@
                 $query_detail_cart = mysqli_query($mysqli,$insert_Detail_cart);
             }
         }
-        // $update = "UPDATE chitietphukien SET chitietphukien.SoLuongPhuKien = CASE when chitietphukien.IdChiTietPhuKien = '$id' then chitietphukien.SoLuongPhuKien - $SoLuongMua END WHERE chitietphukien.IdChiTietPhuKien in (IdChiTietPhuKien = '$id')";
-        // $query_update = mysqli_query($mysqli,$update);
+        $update = "UPDATE chitietphukien SET chitietphukien.SoLuongPhuKien = CASE when chitietphukien.IdChiTietPhuKien = '$id' then chitietphukien.SoLuongPhuKien - $SoLuongMua END WHERE chitietphukien.IdChiTietPhuKien in (IdChiTietPhuKien = '$id')";
+        $query_update = mysqli_query($mysqli,$update);
 
+        //var_dump($query_update);exit;
 
         unset($_SESSION['cart']);
         header('Location:Index.php?quanly=camon');

@@ -3,6 +3,7 @@
     body {
         overflow-x: hidden;
         background-color: #ecebeb;
+        margin: 0 !important;
     }
     
     a {
@@ -2305,4 +2306,140 @@
 
     .form-group .lable{
         color: #00ADEF;
+    }
+
+
+    /************************ Login **************************************/
+    .container-login {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .Login-width {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .Login-scroller {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .Login-background {
+        background: url(Image/bg.jpg);
+        background-size: cover;
+        padding: 1.875rem 1.75rem;
+        width: 100%;
+        flex-grow: 1;
+        align-items: center !important;
+        display: flex !important;
+    }
+
+    .Login-Card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #191c24;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .Login-Tilte {
+        padding: 3rem !important;
+    }
+
+    .Login-card-title {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.865rem;
+        line-height: 1;
+        vertical-align: top;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .form-group input {
+        display: flex;
+        justify-items: flex-start;
+    }
+
+    .form-control {
+        border: 1px solid #2c2c33;
+        font-weight: normal;
+        font-size: 0.875rem;
+        padding: 0.625rem 0.6875rem;
+        background-color: #d2d4d6 !important;
+        border-radius: 2px;
+        color: #000;
+    }
+
+    input[type=text] {
+        background-color: #d2d4d6 !important;
+        color: #000;
+    }
+
+    .form-check {
+        min-height: 18px;
+        padding-left: 1.25rem;
+        position: relative;
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .form-check .form-check-label {
+        display: block;
+        padding-left: 0.625rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: #6c7293;
+    }
+
+    .enter-btn {
+        height: 45px;
+    }
+
+    .btn-facebook {
+        background: #3b579d;
+        color: #fff;
+        max-width: 100%;
+        font-size: 0.875rem;
+        flex-grow: 1;
+    }
+
+    .btn-google {
+        background: #bf3322;
+        color: #fff;
+        max-width: 100%;
+        font-size: 0.875rem;
+        flex-grow: 1;
+    }
+
+    .mr-2 {
+        margin-right: 0.5rem !important;
+    }
+
+    .sign-up {
+        font-size: 0.875rem;
+        text-align: center;
+        margin-bottom: 0;
+        color: #fff;
+        font-weight: bold;
     }
