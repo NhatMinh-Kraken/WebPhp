@@ -51,7 +51,7 @@
                                     <div class="fix"></div>
                                     <div class="footer-MuaPhuKien">
                                         <div class="button-MuaPhuKien">
-                                            <a href="#" class="button-MuaPhuKien-link" role="button">
+                                            <a href="?quanly=Accesory" class="button-MuaPhuKien-link" role="button">
                                                 <span class="button-MuaPhuKien-text">Mua Phụ Kiện</span>
                                             </a>
                                         </div>
